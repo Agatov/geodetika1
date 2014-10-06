@@ -20,7 +20,7 @@ body
   padding: 0px
   margin: 0px
   font-family: 'Roboto-Light', 'Helvetica', 'Arial', sans-serif
-  min-width: 1024px
+  min-width: 1150px
   color: #4A4A4A
 
 .wrapper
@@ -171,6 +171,15 @@ strong
       text-align: center
 
 
+
+    .complectation
+      display: none
+      width: 280px
+      margin: 25px auto
+      li
+        &:before
+          content: "- "
+
     .button
       position: absolute
       bottom: 40px
@@ -238,6 +247,32 @@ strong
 
       &.n2
         padding-top: 80px
+
+
+
+.parameters-block
+  .left
+    float: left
+    width: 440px
+  .right
+    float: right
+    width: 440px
+
+.parameters-section
+  margin-bottom: 30px
+  .parameters-title
+    font-size: 16px
+    font-family: 'Roboto-Regular'
+    text-decoration: underline
+    margin-bottom: 20px
+  .parameters-list
+    li
+      font-size: 15px
+      line-height: 1.3
+      margin-bottom: 5px
+
+      &:before
+        content: "- "
 
 
 

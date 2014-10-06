@@ -46,10 +46,12 @@
       %br
       чтобы с вами связался наш менеджер и рассказал про условия тест-драйва
 
-    %form.clearfix
+    .form-thank-you Спасибо за обращение! Наш менеджер свяжется с вами через 15 минут
+
+    .form.clearfix{form_id: '1'}
       %input{type: :text, name: :name, placeholder: 'Введите ваше имя'}
       %input{type: :text, name: :name, placeholder: 'Введите ваш телефон'}
-      %button Оставить заявку
+      %button.send-form Оставить заявку
 
 
 %section
@@ -134,7 +136,7 @@
           контроллер South MasterPro
           Mobile S10* с ПО SurvCE
 
-        .button
+        .button.show-complectation-modal
           Комплектация
 
 
@@ -144,7 +146,7 @@
         .about
           Приемник South S82-2013 GSM база + ровер и контроллер South MasterPro Mobile S10* с ПО SurvCE
 
-        .button
+        .button.show-complectation-modal
           Комплектация
 
       .complect
@@ -154,7 +156,7 @@
           Приемник South S82-2013
           GSM/УКВ база + ровер и контроллер South MasterPro Mobile S10* с ПО SurvCE
 
-        .button
+        .button.show-complectation-modal
           Комплектация
 
 
@@ -214,24 +216,208 @@
 .form-block
   .wrapper
     .offer
-      Возьмите приемник на тест-драйв до 15 августа.
+      Запишитесь на бесплатный обучающий семинар по
       %br
-      14 дней - бесплатно. 100% гарантия возврата денег без лишних вопросов!
+      GPS-приемникам и другой нашей продукции
 
     .suboffer
       Оставьте ваше контактные данные в форме ниже,
       %br
-      чтобы с вами связался наш менеджер и рассказал про условия тест-драйва
+      чтобы с вами связался наш менеджер и рассказал про семинар
 
-    %form.clearfix
+    .form-thank-you Спасибо за обращение! Наш менеджер свяжется с вами через 15 минут
+
+    .form.clearfix{form_id: '2'}
       %input{type: :text, name: :name, placeholder: 'Введите ваше имя'}
       %input{type: :text, name: :name, placeholder: 'Введите ваш телефон'}
-      %button Оставить заявку
+      %button.send-form Оставить заявку
 
 
 %section
   .wrapper
     .title Технические характеристики
+
+    .parameters-block.clearfix
+
+      .left
+        .parameters-section
+          .parameters-title
+            Общая информация:
+          %ul.parameters-list
+            %li
+              Cистема выполнена на основе высокоэффективного ОЕМ GNSS модуля Trimble BD970, что обеспечивает поддержку 220-ти параллельных каналов слежения за навигационными спутниками всех существующих орбитальных группировок GNSS
+            %li
+              По умолчанию приемники системы обеспечивают прием сигналов GPS и ГЛОНАСС диапазонов частот L1 и L2
+
+            %li
+              OEM модуль на чипе Maxwell 6 (аналогично Trimble R8): уникальные характеристики точности фазовых измерений < 1 мм
+
+            %li
+              УКВ модем полностью совместим с радиомодемами Trimble, Pacific Crest и Satel
+
+
+        .parameters-section
+          .parameters-title
+            Отслеживание спутниковых сигналов:
+
+          %ul.parameters-list
+            %li
+              %strong GPS:
+              Одновремнно L1 C/A, L2E, L2C, L5.
+            %li
+              %strong GLONASS:
+              Одновремнно L1 C/A, L1 P, L2 C/A (Только GLONASS M),
+              L2 P.
+            %li
+              %strong SBAS:
+              Одновремнно L1 C/A, L5.
+            %li
+              %strong Galileo:
+              (Зарезервировано)
+              %br
+              GIOVE-A: Одновремнно L1 BOC, E5A, E5B, E5AltBOC.
+              %br
+              GIOVE-B: Одновремнно L1 CBOC, E5A, E5B, E5AltBOC.
+              %br
+            %li
+              %strong Compass:
+              %br
+              B1 (QPSK), B1-MBOC (6,1,1/11), B1-2 (QPSK)
+              %br
+              B2 (QPSK), B2-BOC (10, 5),
+              %br
+              B3 (QPSK), B3BOC (15, 2.5)
+              %br
+              L5 (QPSK)
+
+        .parameters-section
+          .parameters-title
+            Точность определения координат (CKO):
+
+          %ul.parameters-list
+            %li
+              кодовый DGPS режим (реальное время):
+              план: ± 25м м + 1 ppm
+              высота: ± 50м м + 1 ppm
+
+            %li
+              RTK съемка (реальное время, время инициализации < 10 c):
+              план: ± 8 мм + 1 ppm
+              высота: ± 15 мм + 1 ppm
+            %li
+              Статическая съемка с пост-обработкой
+              план: ± 2.5 мм + 1 ppm
+              высота: ± 5 мм + 1 ppm
+
+            %li
+              Время инициализации: обычно <15 с
+            %li
+              Надежность инициализации: обычно> 99,9%
+
+
+        .parameters-section
+          .parameters-title
+            Физические характеристики:
+
+          %ul.parameters-list
+            %li Габариты:184мм х 184мм х 96мм
+            %li Вес: 1.2 кг  с учетом батарей и внешней УКВ антенны
+            %li Рабочий диапазон температур: -40℃ ~ +75℃
+            %li Диапазон температур хранения: -55℃ ~ +85℃
+            %li Влагозащищённость: защищён от временного погружения на глубину до 1 метра и 100% влажности.
+            %li Высокий уровень защиты от влаги, пыли и ударов
+
+
+        .parameters-section
+          .parameters-title
+            Электропитание:
+
+          %ul.parameters-list
+            %li Вход для внешнего питания 12-15В постоянного тока(DC) с перенапряжением
+            %li Перезаряжаемая Li-Ion батарея (7,4 В, 2,5 А/ч) + запасная
+            %li Встроенный GSM/GPRS модем (4 часа непрерывной работы от одной батареи)-
+            %li Встроенный УКВ приемник (410-430 или 430-450 или 450-470 МГц, 4,8 часа работы от одной батареи)
+
+
+      .right
+
+        .parameters-section
+          .parameters-title
+            Контроллер:
+
+          %ul.parameters-list
+            %li
+              PSION WorkaboutPro3
+
+        .parameters-section
+          .parameters-title
+            Платформа:
+
+          %ul.parameters-list
+            %li Мощный процессор 624МГц,PXA270
+            %li Память 1 Гб Flash ROM
+            %li Память 256 Мб RAM
+
+
+        .parameters-section
+          .parameters-title
+            Платформа:
+
+          %ul.parameters-list
+            %li Windows®CE 5 (стандартно)
+            %li Windows Mobile 6 Classic, Professional ®(опционально)
+
+
+        .parameters-section
+          .parameters-title
+            Беспроводная связь:
+
+          %ul.parameters-list
+            %li Bluetooth ® класс II, V 2.0 + EDR
+
+        .parameters-section
+          .parameters-title
+            Внешние разъемы:
+
+          %ul.parameters-list
+            %li Гибкий кабель с разъемом для СОМ и USB
+            %li Стыковочный разъем(LIF)
+            %li DC Разъем питания
+
+
+        .parameters-section
+          .parameters-title
+            Пользовательский интерфейс:
+
+          %ul.parameters-list
+            %li Цветной сенсорный экран
+            %li VGA дисплей размером 480x640 пикселей
+            %li Трансфлективный, TFT-портретный режим
+            %li Подсветка экрана
+            %li 165 кд/м2 выходной
+            %li Буквенно-цифровая клавиатура
+
+        .parameters-section
+          .parameters-title
+            Слоты расширения:
+
+          %ul.parameters-list
+            %li Слот для карты SD/MMC
+            %li Интерфейс USB: поддерживает GPS-модуль расширения.
+            %li 100-PIN интерфейс расширения: поддержка PCMCIA (тип II), GPRS/EDGE и других  сторонних модулей расширения разработаны с использованием комплекта оборудования Psion разработчика.
+            %li Слот для карты Compact Flash
+
+        .parameters-section
+          .parameters-title
+            Управление энергопотреблением:
+
+          %ul.parameters-list
+            %li Стандартная емкость аккумулятора 3,7 В, 2700 мАч (опционально)
+            %li Встроенное зарядное устройство
+            %li Перезаряжеемая барарея,пользователи могут заменить аккумулятор резервного питани
+
+
+
 
 
 #footer

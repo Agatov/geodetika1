@@ -23,7 +23,7 @@ class Application < Sinatra::Base
     serve '/js', from: 'assets/javascripts'
     serve '/fonts', from: 'assets/fonts'
 
-    css :application, '/css/application.css', %w(/css/reset.css /css/index.css /css/intro.css /css/form.css)
+    css :application, '/css/application.css', %w(/css/reset.css /css/index.css /css/intro.css /css/form.css /css/modal.css)
     js :application, '/js/application.js', %w( /js/jquery-1.9.1.js /js/initializer.js /js/form.js)
 
     css_compression :sass
@@ -36,13 +36,17 @@ class Application < Sinatra::Base
 
   post '/orders.json' do
 
-    message = "#{params[:order][:username]}. #{params[:order][:phone]}"
+    message = "#{params[:order][:name]}. #{params[:order][:phone]}"
 
-
+    if params[:order][:form_id] == '1'
+      subject = I18n.t('email.title1', locale: 'ru')
+    elsif params[:order][:form_id] == '2'
+      subject = I18n.t('email.title2', locale: 'ru')
+    end
 
     Pony.mail ({
       to: 'abardacha@gmail.com',
-      subject: I18n.t('email.title', locale: 'ru'),
+      subject: subject,
       body: message,
       via: :smtp,
       via_options: {

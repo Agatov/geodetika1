@@ -2,8 +2,10 @@ $ ->
 
   $('.send-form').on 'click', ->
 
-    username = $('input[name=username]')
-    phone = $('input[name=phone]')
+    form = $(@).parents('.form')
+
+    username = form.find('input[name=name]')
+    phone = form.find('input[name=phone]')
 
     shake_fields = []
 
@@ -20,6 +22,7 @@ $ ->
     $.post(
       '/orders.json',
     {
+      'order[form_id]': form.attr('form_id')
       'order[username]': username.val(),
       'order[phone]': phone.val()
     },
@@ -27,17 +30,15 @@ $ ->
 
     )
 
-    show_thank_you()
+    show_thank_you(form)
     reachGoal 'new_order'
 
 
-window.show_thank_you = ->
-
-  form_block = $('.form').find('.form-block')
+window.show_thank_you = (form_block)  ->
 
   form_block.animate({opacity: 0}, 1000, ->
     form_block.hide()
-    thank_you_block = $('.form').find('.form-thank-you')
+    thank_you_block = form_block.parents('.form-block').find('.form-thank-you')
     thank_you_block.show()
     thank_you_block.animate({opacity: 1}, 1000, ->
       $('input[type=text]').val('')
@@ -58,5 +59,5 @@ window.shake = (field, i) ->
 
 
 window.reachGoal = (goal) ->
-  yaCounter25189187.reachGoal goal
+#  yaCounter25189187.reachGoal goal
 
